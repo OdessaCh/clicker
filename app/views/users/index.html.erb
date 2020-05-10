@@ -2,3 +2,8 @@
 <% @mes_utilisateurs.each do |utilisateur| %>
 <p><%= utilisateur.name %> </p>
 <% end %>
+<%= form_tag "/users", method: "post" do %>
+  <input type="text" name="name" />
+  <!-- <input type="text" name="password"/> -->
+  <input type="submit" value="Entrez votre pseudo" />
+<% end %>

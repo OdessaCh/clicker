@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1>
+ 
+<%= form_tag "/users/#{@user.id}", method: "patch" do %>
+    <input type="text" name="name" value="<%= @user.name %>" />
+    <P><%= @user.errors[:name].first %></P>
+    <input type="submit" value="Modifier le pseudo" />
+<% end %>
+
+<%= form_tag "/users/#{@user.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer le compte" />
+<% end %>
+<p><a href="/users"> Retourner à l'index</a></p>

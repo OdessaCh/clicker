@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users' => 'users#index'
-  post 'users' => 'users#create'
-  root 'pages#home'
+  root "pages#home"
+  resources :users, only: [:index, :create, :show, :update, :destroy]
 end

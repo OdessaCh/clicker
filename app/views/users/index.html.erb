@@ -1,9 +1,9 @@
 <h1> personnes inscrites: </h1>
-<% @mes_utilisateurs.each do |utilisateur| %>
-<p><%= utilisateur.name %> </p>
-<% end %>
 <%= form_tag "/users", method: "post" do %>
   <input type="text" name="name" />
-  <!-- <input type="text" name="password"/> -->
+  <input type="text" name="password"/>
   <input type="submit" value="Entrez votre pseudo" />
+<% end %>
+<% @mes_utilisateurs.each do |user| %>
+<p><a href="/users/<%= user.id %>"><%= user.name %></a></p>
 <% end %>

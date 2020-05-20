@@ -1,14 +1,21 @@
-<div>
-    <h1>CLICKEEEEEEEEEEEEEER</h1>
-    <p>Appuies sur l'image pour marquer des points et faire gagner l'équipe Karasuno !</p>
-    <p>Score: <span id="points">0</span> </p>
-    <div onclick="scoreUp()"><%= image_tag "karasuno.jpg", width: 400 %>
+<body>
+    <div class="barreNavig">Haikyuu</div>
+    <div class="contenu">
+        <div class="bonus">
+            Appuies sur l'image pour marquer des points et faire gagner l'équipe Karasuno !
+        </div>
+        <div class="imageScore">
+            <div onclick="scoreUp()"><%= image_tag "karasuno.jpg", width: 400 %>
+            </div>
+            <p>Score: <span id="points">0</span> </p>
+            <%= image_tag "aoba.jpg", width: 400%>
+
+        </div>
     </div>
-    <%= image_tag "aoba.jpg", width: 400%>
-</div>
-<div>
+    <!-- <div>
     <form action="/users" method="post">
         <input type="text" name="title" />
         <input type="submit" value="Entrez votre pseudo" />
     </form>
-</div>
+</div> -->
+</body>

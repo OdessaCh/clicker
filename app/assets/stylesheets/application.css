@@ -1,6 +1,30 @@
-h1 {
-    color: coral;
-}
 div {
-text-align: center;
+    text-align: center;
+}
+
+.barreNavig {
+    background-color: orange;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    color: black;
+    font-weight: bold;
+}
+
+.bonus {
+}
+
+.imageScore {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: orange;
+}
+
+.contenu {
+    margin-top: 10em;
+    color: white;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(43, 31, 18);
 }

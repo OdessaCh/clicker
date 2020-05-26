@@ -1,5 +1,5 @@
 <body>
-    <div class="barreNavig">Haikyuu</div>
+    <div class="barreNavig">H a i k y u u ! !</div>
     <div class="contenu">
         <div class="bonus">
             Appuies sur l'image pour marquer des points et faire gagner l'équipe Karasuno !
@@ -7,8 +7,13 @@
         <div class="imageScore">
             <div onclick="scoreUp()"><%= image_tag "karasuno.jpg", width: 400 %>
             </div>
-            <p>Score: <span id="points">0</span> </p>
-            <%= image_tag "aoba.jpg", width: 400%>
+            <div class="pop">Score:
+                <div>
+                    <span id="points">0</span> -
+                    <span id="pointsEnnemi">0</span>
+                </div>
+            </div>
+            <div><%= image_tag "aoba.jpg", width: 400%></div>
 
         </div>
     </div>

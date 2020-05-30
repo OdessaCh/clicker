@@ -1,33 +1,38 @@
 let check = false;
 let scoreJoueur;
 let scoreAdverse;
+let compteur = 0;
+let pointParSeconde = 1;
+let pointsEnnemiParSeconde = 1;
 
 window.scoreUp = function () {
-    scoreJoueur = this.document.getElementById('points');
     scoreAdverse = this.document.getElementById('pointsEnnemi');
-    scoreJoueur.innerText++;
-
-    if (scoreJoueur.innerText == 25) {
-        bonusPalier();
+    augmentationScoreJoueur(1);
+    compteur++;
+    if (compteur == 15) {
+        augmentationScoreJoueur(1025);
+    }
+    if (compteur === 50) {
+        pointParSeconde = 53;
     }
     if (scoreJoueur.innerText >= 1030) {
         augmentationScoreJoueur(100);
     }
-
     if (!check) {
-        lancerScoreEnnemi();
+        lancerScore();
     }
 }
 
-window.lancerScoreEnnemi = function () {
+window.lancerScore = function () {
     check = true;
     this.setInterval(function () {
+        augmentationScoreJoueur(pointParSeconde);
         scoreAdverse.innerText++;
-        if (scoreAdverse.innerText == 16) {
-            bonusPalierAdverse();
+        if (scoreAdverse.innerText == 10) {
+            augmenterScoreEnnemi(806);
         }
         if (scoreAdverse.innerText >= 820) {
-            augmenterScoreEnnemi(74);
+            augmenterScoreEnnemi(84);
         }
 
     }, 500);
@@ -39,15 +44,6 @@ window.augmenterScoreEnnemi = function (augmentation) {
     stockInt += augmentation;
     scoreAdverse.innerText = stockInt;
 
-}
-window.bonusPalier = function () {
-    scoreJoueur = this.document.getElementById('points');
-    scoreJoueur.innerText = 1025;
-}
-
-window.bonusPalierAdverse = function () {
-    scoreAdverse = this.document.getElementById('pointsEnnemi');
-    scoreAdverse.innerText = 816;
 }
 
 window.augmentationScoreJoueur = function (augmentation) {

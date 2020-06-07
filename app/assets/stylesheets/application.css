@@ -35,3 +35,10 @@ body {
     font-size: 1.3em;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.modal-body, .modal-title{
+    color:black;
+}
+.btn.btn-info{
+    margin-top: 1.5em;
+}

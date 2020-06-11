@@ -39,6 +39,19 @@ body {
 .modal-body, .modal-title{
     color:black;
 }
-.btn.btn-info{
-    margin-top: 1.5em;
+.boutonPrincipal{
+margin-top: 1.3em;
+}
+
+.modal-body{
+    /* display: flex;
+    justify-content: space-evenly;
+    align-items: center; */
+    font-size: medium;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+}
+
+.item {
+    align-self: center;
 }

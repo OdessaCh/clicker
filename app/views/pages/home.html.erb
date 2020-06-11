@@ -2,7 +2,7 @@
     <div class="barreNavig">H a i k y u u ! !</div>
     <div class="contenu">
         <div class="bonus">
-            Appuies sur l'image pour marquer des points et faire gagner l'équipe Karasuno !
+            Appuie sur l'image de ton équipe favorite pour marquer des points et faire gagner l'équipe Karasuno !
         </div>
         <div class="imageScore">
             <div onclick="scoreUp()"><%= image_tag "karasuno.jpg", width: 400 %>
@@ -17,7 +17,7 @@
 
         </div>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="btn btn-info boutonPrincipal" data-toggle="modal" data-target="#exampleModalCenter">
             Connaître son CPM
         </button>
 
@@ -33,10 +33,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        popoppp
+                        <div class="item">
+                            Temps restant: <span id="compteARebours">10</span>
+                        </div>
+                        <button type="button" onclick="clicParMinute()" id="compteurClic"
+                            class="btn btn-info">Clique ici</button>
+                        <div class="item">
+                            Points: <span id="affichageCPM">0</span>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Valider</button>
+                        <button type="button" onclick="recommencer()" class="btn btn-outline-warning" >Recommencer</button>
+                        <button type="button"  class="btn btn-primary" data-dismiss="modal">Fermer</button>
+
                     </div>
                 </div>
             </div>

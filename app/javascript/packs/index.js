@@ -6,6 +6,11 @@ let pointParSeconde = 1;
 let pointsEnnemiParSeconde = 1;
 let meilleurScore;
 let faibleScore;
+let cpmCheck = false;
+let cpmDecompte = 100;
+let decompte;
+let nombreDeClics;
+
 
 window.scoreUp = function () {
     scoreAdverse = this.document.getElementById('pointsEnnemi');
@@ -68,3 +73,32 @@ window.meilleurJoueur = function (plusHautScore, plusBasScore) {
     plusBasScore.style.fontSize = '1em';
 }
 
+window.clicParMinute = function () {
+    nombreDeClics = this.document.getElementById('affichageCPM');
+    decompte = this.document.getElementById('compteARebours');
+
+    if (!cpmCheck) {
+        cpmCheck = true;
+        let interval = this.setInterval(function () {
+            cpmDecompte--;
+            decompte.innerText = cpmDecompte / 10;
+            if (cpmDecompte === 0) {
+                clearInterval(interval);
+            }
+        }, 100);
+
+    }
+    if (cpmDecompte > 0) {
+        nombreDeClics.innerText++;
+    }
+
+}
+
+window.recommencer = function () {
+    if(cpmDecompte==0) {
+    cpmCheck = false;
+    cpmDecompte = 100;
+    decompte.innerText = 0;
+    nombreDeClics.innerText = 0;
+    }
+}

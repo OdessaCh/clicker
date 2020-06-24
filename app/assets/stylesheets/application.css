@@ -51,6 +51,9 @@ margin-top: 1.3em;
     display: grid;
     grid-template-columns: 40% 20% 40%;
 }
+.modal-footer{
+    color: black;
+}
 
 .item {
     align-self: center;

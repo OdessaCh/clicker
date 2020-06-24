@@ -76,6 +76,7 @@ window.meilleurJoueur = function (plusHautScore, plusBasScore) {
 window.clicParMinute = function () {
     nombreDeClics = this.document.getElementById('affichageCPM');
     decompte = this.document.getElementById('compteARebours');
+    resultatCPM = this.document.getElementById('resultatCPM')
 
     if (!cpmCheck) {
         cpmCheck = true;
@@ -92,6 +93,11 @@ window.clicParMinute = function () {
         nombreDeClics.innerText++;
     }
 
+    if(cpmDecompte === 0 && nombreDeClics.innerText>0){
+        let stock= parseInt(nombreDeClics.innerText, 10);
+        stock = stock*6;
+        resultatCPM.innerText = stock;
+    }
 }
 
 window.recommencer = function () {
